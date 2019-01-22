@@ -1,0 +1,408 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red3\green35\blue41;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c18039\c21176;\cssrgb\c100000\c100000\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <VirtualHost *:443>\
+        # The ServerName directive sets the request scheme, hostname and po$\
+        # the server uses to identify itself. This is used when creating\
+        # redirection URLs. In the context of virtual hosts, the ServerName\
+        # specifies what hostname must appear in the request's Host: header$\
+        # match this virtual host. For the default virtual host (this file)$\
+        # value is not decisive as it is used as a last resort host regardl$\
+        # However, you must set it for any further virtual host explicitly.\
+        #ServerName www.example.com\
+\
+        ServerAdmin webmaster@localhost\
+        ServerName bestrecs.52.47.160.192.xip.io\
+        ServerAlias bestrecs.miss-t.ch\
+        DocumentRoot /var/www/bestrecs/public_html\
+        DirectoryIndex neighborhood.html\
+        <Directory /var/www/bestrecs/public_html>\
+                Options Indexes FollowSymLinks\
+                AllowOverride All\
+                Require all granted\
+        </Directory>\
+\
+# Available loglevels: trace8, ..., trace1, debug, info, notice, wa$\
+        # error, crit, alert, emerg.\
+        # It is also possible to configure the loglevel for particular\
+        # modules, e.g.\
+        #LogLevel info ssl:warn\
+\
+        ErrorLog $\{APACHE_LOG_DIR\}/error.log\
+        CustomLog $\{APACHE_LOG_DIR\}/access.log combined\
+\
+        # For most configuration files from conf-available/, which are\
+        # enabled or disabled at a global level, it is possible to\
+# include a line for only one particular virtual host. For example $\
+        # following line enables the CGI configuration for this host only\
+        # after it has been globally disabled with "a2disconf".\
+        #Include conf-available/serve-cgi-bin.conf\
+\
+        Include /etc/letsencrypt/options-ssl-apache.conf\
+        SSLCertificateFile /etc/letsencrypt/live/bestrecs.miss-t.ch/fullcha$\
+        SSLCertificateKeyFile /etc/letsencrypt/live/bestrecs.miss-t.ch/priv$\
+</VirtualHost>\
+\
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet\
+\
+\
+\pard\pardeftab720\sl640\sa160\partightenfactor0
+
+\fs56 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 35.180.36.146\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 180\
+\
+\
+\
+\
+\
+<VirtualHost *:443>\
+        # The ServerName directive sets the request scheme, hostname and po$\
+        # the server uses to identify itself. This is used when creating\
+        # redirection URLs. In the context of virtual hosts, the ServerName\
+        # specifies what hostname must appear in the request's Host: header$\
+        # match this virtual host. For the default virtual host (this file)$\
+        # value is not decisive as it is used as a last resort host regardl$\
+        # However, you must set it for any further virtual host explicitly.\
+        #ServerName www.example.com\
+\
+        ServerAdmin webmaster@localhost\
+        ServerName calapp.35.180.36.146.xip.io\
+        ServerAlias calapp.miss-t.ch\
+        DocumentRoot /var/www/calapp/public_html\
+        DirectoryIndex Telegram_Bot.py\
+        <Directory /var/www/calapp/public_html>\
+                Options Indexes FollowSymLinks\
+                AllowOverride All\
+                Require all granted\
+        </Directory>\
+\
+# Available loglevels: trace8, ..., trace1, debug, info, notice, wa$\
+        # error, crit, alert, emerg.\
+        # It is also possible to configure the loglevel for particular\
+        # modules, e.g.\
+	#LogLevel info ssl:warn\
+\
+        ErrorLog $\{APACHE_LOG_DIR\}/error.log\
+        CustomLog $\{APACHE_LOG_DIR\}/access.log combined\
+\
+        # For most configuration files from conf-available/, which are\
+        # enabled or disabled at a global level, it is possible to\
+	# include a line for only one particular virtual host. For example $\
+        # following line enables the CGI configuration for this host only\
+        # after it has been globally disabled with "a2disconf".\
+        #Include conf-available/serve-cgi-bin.conf\
+\
+        Include /etc/letsencrypt/options-ssl-apache.conf\
+	SSLCertificateFile /etc/letsencrypt/live/calapp.miss-t.ch/fullchain.pem\
+        SSLCertificateKeyFile /etc/letsencrypt/live/calapp.miss-t.ch/privkey.pem\
+</VirtualHost>\
+\
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+<VirtualHost *:80>\
+        # The ServerName directive sets the request scheme, hostname and port that\
+        # the server uses to identify itself. This is used when creating\
+        # redirection URLs. In the context of virtual hosts, the ServerName\
+        # specifies what hostname must appear in the request's Host: header to\
+        # match this virtual host. For the default virtual host (this file) this\
+        # value is not decisive as it is used as a last resort host regardless.\
+        # However, you must set it for any further virtual host explicitly.\
+        #ServerName www.example.com\
+\
+        ServerAdmin webmaster@localhost\
+        ServerName restaurants.35.180.36.146.xip.io\
+        ServerAlias restaurants.miss-t.ch\
+        # DocumentRoot /var/www/restaurants/public_html\
+        WSGIScriptAlias / /var/www/restaurants/public_html/app.wsgi\
+        <Directory /var/www/restaurants/public_html>\
+                Order deny,allow\
+                Require all granted\
+                WSGIScriptReloading On\
+        </Directory>\
+        # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,\
+        # error, crit, alert, emerg.\
+        # It is also possible to configure the loglevel for particular\
+        # modules, e.g.\
+        #LogLevel info ssl:warn\
+	ErrorLog $\{APACHE_LOG_DIR\}/error.log\
+        CustomLog $\{APACHE_LOG_DIR\}/access.log combined\
+\
+        # For most configuration files from conf-available/, which are\
+        # enabled or disabled at a global level, it is possible to\
+        # include a line for only one particular virtual host. For example the\
+        # following line enables the CGI configuration for this host only\
+        # after it has been globally disabled with "a2disconf".\
+        #Include conf-available/serve-cgi-bin.conf\
+        RewriteEngine on\
+        RewriteCond %\{SERVER_NAME\} =restaurants.35.180.36.146.xip.io [OR]\
+        RewriteCond %\{SERVER_NAME\} =restaurants.miss-t.ch\
+	RewriteRule ^ https://%\{SERVER_NAME\}%\{REQUEST_URI\} [END,NE,R=permanent]\
+</VirtualHost>\
+\
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet\
+\
+\
+\
+\
+\
+IfModule mod_ssl.c>\
+ <VirtualHost *:443>\
+        # The ServerName directive sets the request scheme, hostname and port that\
+        # the server uses to identify itself. This is used when creating\
+        # redirection URLs. In the context of virtual hosts, the ServerName\
+        # specifies what hostname must appear in the request's Host: header to\
+        # match this virtual host. For the default virtual host (this file) this\
+        # value is not decisive as it is used as a last resort host regardless.\
+        # However, you must set it for any further virtual host explicitly.\
+        #ServerName www.example.com\
+\
+        ServerAdmin webmaster@localhost\
+        ServerName restaurants.35.180.36.146.xip.io\
+        ServerAlias restaurants.miss-t.ch\
+        # DocumentRoot /var/www/restaurants/public_html\
+        WSGIScriptAlias / /var/www/restaurants/public_html/app.wsgi\
+        <Directory /var/www/restaurants/public_html>\
+                Order deny,allow\
+                Require all granted\
+                WSGIScriptReloading On\
+        </Directory>\
+        # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,\
+        # error, crit, alert, emerg.\
+        # It is also possible to configure the loglevel for particular\
+        # modules, e.g.\
+	#LogLevel info ssl:warn\
+\
+        ErrorLog $\{APACHE_LOG_DIR\}/error.log\
+        CustomLog $\{APACHE_LOG_DIR\}/access.log combined\
+\
+        # For most configuration files from conf-available/, which are\
+        # enabled or disabled at a global level, it is possible to\
+        # include a line for only one particular virtual host. For example the\
+        # following line enables the CGI configuration for this host only\
+        # after it has been globally disabled with "a2disconf".\
+        #Include conf-available/serve-cgi-bin.conf\
+        SSLCertificateFile /etc/letsencrypt/live/restaurants.miss-t.ch/fullchain.pem\
+        SSLCertificateKeyFile /etc/letsencrypt/live/restaurants.miss-t.ch/privkey.pem\
+	Include /etc/letsencrypt/options-ssl-apache.conf\
+</VirtualHost>\
+</IfModule>\
+\
+\
+\
+\
+calapp\
+\
+\
+\
+<IfModule mod_ssl.c>\
+ <VirtualHost *:443>\
+        # The ServerName directive sets the request scheme, hostname and port that\
+        # the server uses to identify itself. This is used when creating\
+        # redirection URLs. In the context of virtual hosts, the ServerName\
+        # specifies what hostname must appear in the request's Host: header to\
+        # match this virtual host. For the default virtual host (this file) this\
+        # value is not decisive as it is used as a last resort host regardless.\
+        # However, you must set it for any further virtual host explicitly.\
+        #ServerName www.example.com\
+\
+        ServerAdmin webmaster@localhost\
+        ServerName calapp.35.180.36.146.xip.io\
+        ServerAlias calapp.miss-t.ch\
+        # DocumentRoot /var/www/calapp/public_html\
+        WSGIScriptAlias / /var/www/calapp/public_html/app.wsgi\
+        <Directory /var/www/calapp/public_html>\
+                Order deny,allow\
+                Require all granted\
+                WSGIScriptReloading On\
+        </Directory>\
+        # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,\
+        # error, crit, alert, emerg.\
+        # It is also possible to configure the loglevel for particular\
+        # modules, e.g.\
+	#LogLevel info ssl:warn\
+\
+        ErrorLog $\{APACHE_LOG_DIR\}/error.log\
+        CustomLog $\{APACHE_LOG_DIR\}/access.log combined\
+\
+        # For most configuration files from conf-available/, which are\
+        # enabled or disabled at a global level, it is possible to\
+        # include a line for only one particular virtual host. For example the\
+        # following line enables the CGI configuration for this host only\
+        # after it has been globally disabled with "a2disconf".\
+        #Include conf-available/serve-cgi-bin.conf\
+        SSLCertificateFile /etc/letsencrypt/live/calapp.miss-t.ch/fullchain.pem\
+        SSLCertificateKeyFile /etc/letsencrypt/live/calapp.miss-t.ch/privkey.pem\
+	Include /etc/letsencrypt/options-ssl-apache.conf\
+</VirtualHost>\
+</IfModule>\
+\
+calapp 80\
+\
+\
+<VirtualHost *:80>\
+        # The ServerName directive sets the request scheme, hostname and port that\
+        # the server uses to identify itself. This is used when creating\
+        # redirection URLs. In the context of virtual hosts, the ServerName\
+        # specifies what hostname must appear in the request's Host: header to\
+        # match this virtual host. For the default virtual host (this file) this\
+        # value is not decisive as it is used as a last resort host regardless.\
+        # However, you must set it for any further virtual host explicitly.\
+        #ServerName www.example.com\
+\
+        ServerAdmin webmaster@localhost\
+        ServerName calapp.35.180.36.146.xip.io\
+        ServerAlias calapp.miss-t.ch\
+        # DocumentRoot /var/www/calapp/public_html\
+        WSGIScriptAlias / /var/www/calapp/public_html/app.wsgi\
+        <Directory /var/www/calapp/public_html>\
+                Order deny,allow\
+                Require all granted\
+                WSGIScriptReloading On\
+        </Directory>\
+        # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,\
+        # error, crit, alert, emerg.\
+        # It is also possible to configure the loglevel for particular\
+        # modules, e.g.\
+        #LogLevel info ssl:warn\
+	ErrorLog $\{APACHE_LOG_DIR\}/error.log\
+        CustomLog $\{APACHE_LOG_DIR\}/access.log combined\
+\
+        # For most configuration files from conf-available/, which are\
+        # enabled or disabled at a global level, it is possible to\
+        # include a line for only one particular virtual host. For example the\
+        # following line enables the CGI configuration for this host only\
+        # after it has been globally disabled with "a2disconf".\
+        #Include conf-available/serve-cgi-bin.conf\
+        RewriteEngine on\
+        RewriteCond %\{SERVER_NAME\} =calapp.35.180.36.146.xip.io [OR]\
+        RewriteCond %\{SERVER_NAME\} =calapp.miss-t.ch\
+        RewriteRule ^ https://%\{SERVER_NAME\}%\{REQUEST_URI\} [END,NE,R=permanent]\
+</VirtualHost>\
+\
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet     \
+\
+\
+curl -H "Content-Type: application/json; charset=utf-8"  -H "Authorization: Bearer ya29.c.ElqQBjSFh6skvAsSiWUgK3m-H-MgtgsBsyljwkDMDs0nMkHppJj7vBNgH6-tfWffkq16qSQPkQwN2AqJRVXyAsI5bDRZwy4KuJxAHvQAkt10ru3wP8QSPrLkTDY"  -d "\{\\"queryInput\\":\{\\"text\\":\{\\"text\\":\\"here is the photo\\",\\"languageCode\\":\\"en\\"\}\},\\"queryParams\\":\{\\"timeZone\\":\\"Europe/Zurich\\"\}\}" "https://dialogflow.googleapis.com/v2/projects/telegram-7cc48/agent/sessions/1380cd93-7fd4-9eee-15d7-f8051a8da62f:detectIntent"\
+\
+\
+\
+\{\
+  "responseId": "075e4158-de6f-4040-a099-d00add9154fd",\
+  "queryResult": \{\
+    "queryText": "here is the photo",\
+    "parameters": \{\},\
+    "allRequiredParamsPresent": true,\
+    "fulfillmentMessages": [\
+      \{\
+        "text": \{\
+          "text": [\
+            ""\
+          ]\
+        \}\
+      \}\
+    ],\
+    "intent": \{\
+      "name": "projects/telegram-7cc48/agent/intents/26b07588-bd44-4097-a388-3b69ca7168bb",\
+      "displayName": "User input"\
+    \},\
+    "intentDetectionConfidence": 1,\
+    "diagnosticInfo": \{\
+      "webhook_latency_ms": 5001\
+    \},\
+    "languageCode": "en"\
+  \},\
+  "webhookStatus": \{\
+    "code": 4,\
+    "message": "Webhook call failed. Error: Request timeout."\
+  \}\
+\}\
+\
+\
+\
+\
+\
+\
+\
+\
+import flask\
+from flask import Flask\
+from flask import request, redirect, url_for, jsonify\
+from flask import make_response\
+import requests\
+import json\
+import dialogflow\
+\
+app = Flask(__name__)\
+\
+@app.route('/')\
+def showKeyboard():\
+    return '<html><body><h1>this is a test from code</h1></body></html>'\
+\
+@app.route('/webhook', methods=["GET","POST"])\
+def showWebhookInfo():\
+    if request.method == 'POST':\
+        test1 = request.get_json()\
+        print "test1 message", test1["message"]\
+        if  "photo" in test1["message"]:\
+            print 'This is test1', test1\
+            # print '<html><body><h1>Webhook installed</h1></body></html>'\
+            # return test1\
+        else:\
+            print 'Nothing'\
+            detect_intent_texts(project_id, session_id, texts, language_code)\
+    return '<html><body><h1>Webhook installed GET method</h1></body></html>'\
+\
+@app.route('/message', methods=['GET', 'POST'])\
+def showMessage():\
+   if request.method == 'POST':\
+       print 'this is Dialogueflow message printed'\
+       test = request.get_json()\
+       num = int(test["queryResult"]["outputContexts"][0]["parameters"]["telegram_chat_id"])\
+       print 'test', num\
+   #     return '<html><body><h1>this is Dialogflow message</h1></body></html>'\
+   # flash( '<html><body><h1>this is dialog flow message not GET</h1></body></html>'\
+  # print 'all good'\
+  # return '<html><body><h1>This is a message for Message request</h1></body></html>'\
+    #data ='\{"name": "brian", "city":"Seattle"\}'\
+   data = json.load(open('/var/www/calapp/public_html/calapp/test1.json'))\
+# print 'OK data'\
+   # console.log(data)\
+   # response1 = data["fulfillmentText"]\
+   # response2 = data["fulfillmentMessages"][0]["card"]["buttons"][0]["text"]\
+   # print response\
+   # return'<html><body><h1>\{response1\}</h1></body></html>'\
+   # print data\
+   bot_token = 'bot676384079:AAE4ZOkoocrP7hnX1ruYf-8G0flqZ1HKRMA'\
+   reply_markup = \{"keyboard":[ ["one"],["two"], ["three"]]\}\
+   url = "https://api.telegram.org/" + bot_token+ "/sendMessage"+"?chat_id=739151409&text=S$\
+    #test = json.dumps(reply_markup)\
+    #print 'Test', test\
+    #new_test = json.stringify(test)\
+    #print 'New test', new_test\
+   print url\
+   info = \{"chat_id": "739151409", "text":"Select one option", "reply_markup": json.dumps(r$\
+   print "Printing", info\
+   r = requests.get(url)\
+   print r.json()\
+   return make_response(json.dumps(data))\
+   if __name__ == "__main__":\
+	app.run(debug=True, port=8000)}

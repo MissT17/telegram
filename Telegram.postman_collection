@@ -1,0 +1,75 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Telegram",
+		"_postman_id": "0f19cd17-106e-2be0-5029-0b4a5b856c3a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Initiation_text",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Your test name\"] = jsonData.value === 100;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{api}}/webhook",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"message\":{  \n        \"date\":1548112636,\n        \"text\":\"Let\\\\u2019s sleep\",\n        \"from\":{  \n            \"first_name\":\"Tatiana\",\n            \"is_bot\":false,\n            \"id\":739151409,\n            \"language_code\":\"en\"\n        },\n        \"message_id\":229,\n        \"chat\":{  \n            \"first_name\":\"Tatiana\",\n            \"type\":\"private\",\n            \"id\":739151409\n        }\n    },\n    \"update_id\":668134454\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Initiation_photo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Your test name\"] = jsonData.value === 100;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{api}}/webhook",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"message\":{  \n        \"date\":1548112933,\n        \"photo\":[  \n            {  \n                \"width\":67,\n                \"height\":90,\n                \"file_id\":\"AgADBAADULAxG39RMFIjBlvn7knd3bI3IhsABIWbUkSbGX83zOcCAAEC\",\n                \"file_size\":1161\n            },\n            {  \n                \"width\":240,\n                \"height\":320,\n                \"file_id\":\"AgADBAADULAxG39RMFIjBlvn7knd3bI3IhsABP2kwctxY0VCzecCAAEC\",\n                \"file_size\":13171\n            },\n            {  \n                \"width\":600,\n                \"height\":800,\n                \"file_id\":\"AgADBAADULAxG39RMFIjBlvn7knd3bI3IhsABIZrppjVeK_5zucCAAEC\",\n                \"file_size\":53176\n            },\n            {  \n                \"width\":960,\n                \"height\":1280,\n                \"file_id\":\"AgADBAADULAxG39RMFIjBlvn7knd3bI3IhsABFk43ZFXkllfy-cCAAEC\",\n                \"file_size\":106361\n            }\n        ],\n        \"from\":{  \n            \"first_name\":\"Tatiana\",\n            \"is_bot\":false,\n            \"id\":739151409,\n            \"language_code\":\"en\"\n        },\n        \"message_id\":230,\n        \"chat\":{  \n            \"first_name\":\"Tatiana\",\n            \"type\":\"private\",\n            \"id\":739151409\n        }\n    },\n    \"update_id\":668134455\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
